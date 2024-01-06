@@ -1,6 +1,8 @@
 package com.blur;
 
 import android.graphics.Color;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
@@ -12,10 +14,15 @@ import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.viewmanagers.BlurViewManagerDelegate;
 import com.facebook.react.viewmanagers.BlurViewManagerInterface;
 
+import java.util.Objects;
+
+import eightbitlab.com.blurview.BlurView;
+
 @ReactModule(name = BlurViewManager.NAME)
 public class BlurViewManager extends SimpleViewManager<BlurView> implements BlurViewManagerInterface<BlurView> {
 
   public static final String NAME = "BlurView";
+  public static final int defaultRadius = 10;
 
   private final ViewManagerDelegate<BlurView> mDelegate;
 
@@ -36,12 +43,20 @@ public class BlurViewManager extends SimpleViewManager<BlurView> implements Blur
 
   @Override
   public BlurView createViewInstance(ThemedReactContext context) {
-    return new BlurView(context);
+    View decorView = Objects.requireNonNull(context.getCurrentActivity()).getWindow().getDecorView();
+    ViewGroup rootView = (ViewGroup) decorView.findViewById(android.R.id.content);
+
+    BlurView blurView = new BlurView(context);
+    blurView.setupWith(rootView).setFrameClearDrawable(decorView.getBackground()).setBlurRadius(defaultRadius);
+
+    blurView.setBlurEnabled(true);
+    blurView.setBlurAutoUpdate(true);
+    return blurView;
   }
 
   @Override
-  @ReactProp(name = "color")
-  public void setColor(BlurView view, String color) {
-    view.setBackgroundColor(Color.parseColor(color));
+  @ReactProp(name = "type")
+  public void setType(BlurView view, @Nullable String value) {
+    view.setOverlayColor("dark".equals(value) ? Color.argb((int) (0.64 * 255), 16, 12, 12) : Color.argb(51, 255, 255, 255));
   }
 }
