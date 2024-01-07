@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import BlurView from 'react-native-blur-view';
+import BlurView from '@dppo/react-native-blur-view';
 
 export default function App() {
   return (

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-blur-view": ["./src/index"]
+      "@dppo/react-native-blur-view": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

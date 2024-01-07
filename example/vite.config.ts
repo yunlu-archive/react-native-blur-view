@@ -39,7 +39,7 @@ export default defineConfig({
     extensions,
     alias: {
       'react-native': 'react-native-web',
-      'react-native-blur-view': path.resolve(__dirname, '../src/index'),
+      '@dppo/react-native-blur-view': path.resolve(__dirname, '../src/index'),
     },
   },
 });
