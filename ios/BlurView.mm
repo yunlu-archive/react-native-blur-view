@@ -14,7 +14,7 @@ using namespace facebook::react;
 @end
 
 @implementation BlurView {
-    UIView * _view;
+    UIVisualEffectView * _view;
 }
 
 + (ComponentDescriptorProvider)componentDescriptorProvider
@@ -28,7 +28,7 @@ using namespace facebook::react;
     static const auto defaultProps = std::make_shared<const BlurViewProps>();
     _props = defaultProps;
 
-    _view = [[UIView alloc] init];
+    _view = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
 
     self.contentView = _view;
   }
@@ -41,9 +41,9 @@ using namespace facebook::react;
     const auto &oldViewProps = *std::static_pointer_cast<BlurViewProps const>(_props);
     const auto &newViewProps = *std::static_pointer_cast<BlurViewProps const>(props);
 
-    if (oldViewProps.color != newViewProps.color) {
-        NSString * colorToConvert = [[NSString alloc] initWithUTF8String: newViewProps.color.c_str()];
-        [_view setBackgroundColor:[self hexStringToColor:colorToConvert]];
+    if (oldViewProps.type != newViewProps.type) {
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:newViewProps.type == BlurViewType::Dark ? UIBlurEffectStyleDark : UIBlurEffectStyleLight];
+        _view.effect = blurEffect;
     }
 
     [super updateProps:props oldProps:oldProps];

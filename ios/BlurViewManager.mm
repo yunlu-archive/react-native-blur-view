@@ -14,6 +14,6 @@ RCT_EXPORT_MODULE(BlurView)
   return [[UIView alloc] init];
 }
 
-RCT_EXPORT_VIEW_PROPERTY(color, NSString)
+RCT_EXPORT_VIEW_PROPERTY(type, NSString)
 
 @end

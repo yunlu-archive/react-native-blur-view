@@ -11,7 +11,7 @@ export default function App() {
         <View style={[{ backgroundColor: 'green' }, styles.box]} />
         <View style={[{ backgroundColor: 'yellow' }, styles.box]} />
       </ScrollView>
-      <BlurView style={styles.blur} type="dark" />
+      <BlurView style={styles.blur} type="light" />
     </View>
   );
 }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   box: {
     width: '100%',
-    height: 300,
+    height: 200,
   },
   blur: {
     position: 'absolute',

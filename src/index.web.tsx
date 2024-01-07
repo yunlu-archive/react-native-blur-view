@@ -11,11 +11,11 @@ export default function BlurView(props: ViewProps & { type?: BlurType }) {
         props.style,
         {
           // @ts-ignore
-          backdropFilter: 'blur(10px)',
+          backdropFilter: 'blur(15px)',
           backgroundColor:
             type === 'dark'
               ? 'rgba(16, 12, 12, 0.64)'
-              : 'rgba(255, 255, 255, 0.2)',
+              : 'rgba(255, 255, 255, 0.31)',
         },
       ]}
     />

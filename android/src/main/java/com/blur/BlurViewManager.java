@@ -22,7 +22,9 @@ import eightbitlab.com.blurview.BlurView;
 public class BlurViewManager extends SimpleViewManager<BlurView> implements BlurViewManagerInterface<BlurView> {
 
   public static final String NAME = "BlurView";
-  public static final int defaultRadius = 10;
+  public static final int defaultRadius = 15;
+  public static final int lightOverlayColor = Color.argb(80, 255, 255, 255);
+  public static final int darkOverlayColor = Color.argb(160, 16, 12, 12);
 
   private final ViewManagerDelegate<BlurView> mDelegate;
 
@@ -57,6 +59,6 @@ public class BlurViewManager extends SimpleViewManager<BlurView> implements Blur
   @Override
   @ReactProp(name = "type")
   public void setType(BlurView view, @Nullable String value) {
-    view.setOverlayColor("dark".equals(value) ? Color.argb((int) (0.64 * 255), 16, 12, 12) : Color.argb(51, 255, 255, 255));
+    view.setOverlayColor("dark".equals(value) ? darkOverlayColor : lightOverlayColor);
   }
 }
