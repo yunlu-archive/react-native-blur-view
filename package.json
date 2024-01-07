@@ -1,6 +1,6 @@
 {
   "name": "@dppo/react-native-blur-view",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React Native Blur Component",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
