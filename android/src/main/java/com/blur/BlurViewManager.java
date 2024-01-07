@@ -46,11 +46,12 @@ public class BlurViewManager extends SimpleViewManager<BlurView> implements Blur
   @Override
   public BlurView createViewInstance(ThemedReactContext context) {
     View decorView = Objects.requireNonNull(context.getCurrentActivity()).getWindow().getDecorView();
-    ViewGroup rootView = (ViewGroup) decorView.findViewById(android.R.id.content);
+    ViewGroup rootView = decorView.findViewById(android.R.id.content);
 
     BlurView blurView = new BlurView(context);
     blurView.setupWith(rootView).setFrameClearDrawable(decorView.getBackground()).setBlurRadius(defaultRadius);
 
+    blurView.setOverlayColor(lightOverlayColor);
     blurView.setBlurEnabled(true);
     blurView.setBlurAutoUpdate(true);
     return blurView;
