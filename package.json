@@ -1,6 +1,6 @@
 {
   "name": "react-native-blur-view",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "React Native Blur Component",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -50,6 +50,7 @@
   },
   "homepage": "https://github.com/dppo/react-native-blur-view#readme",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
