@@ -11,7 +11,17 @@ export default function App() {
         <View style={[{ backgroundColor: 'green' }, styles.box]} />
         <View style={[{ backgroundColor: 'yellow' }, styles.box]} />
       </ScrollView>
-      <BlurView style={styles.blur} type="light" />
+      <BlurView style={styles.blur} type="dark">
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <View style={{ width: 50, height: 50, backgroundColor: 'red' }} />
+        </View>
+      </BlurView>
     </View>
   );
 }

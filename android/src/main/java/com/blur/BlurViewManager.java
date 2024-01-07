@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.module.annotations.ReactModule;
-import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
+import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.ViewManagerDelegate;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.viewmanagers.BlurViewManagerDelegate;
@@ -19,7 +19,7 @@ import java.util.Objects;
 import eightbitlab.com.blurview.BlurView;
 
 @ReactModule(name = BlurViewManager.NAME)
-public class BlurViewManager extends SimpleViewManager<BlurView> implements BlurViewManagerInterface<BlurView> {
+public class BlurViewManager extends ViewGroupManager<BlurView> implements BlurViewManagerInterface<BlurView> {
 
   public static final String NAME = "BlurView";
   public static final int defaultRadius = 15;

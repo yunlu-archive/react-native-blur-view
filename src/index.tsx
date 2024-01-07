@@ -5,7 +5,9 @@ import NativeBlurView, { type BlurType } from './BlurViewNativeComponent';
 export default function BlurView(props: ViewProps & { type?: BlurType }) {
   return (
     <View {...props}>
-      <NativeBlurView type={props.type} style={{ flex: 1 }} />
+      <NativeBlurView type={props.type} style={{ flex: 1 }}>
+        {props.children}
+      </NativeBlurView>
     </View>
   );
 }
