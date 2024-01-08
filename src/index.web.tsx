@@ -12,6 +12,7 @@ export default function BlurView(props: ViewProps & { type?: BlurType }) {
         {
           // @ts-ignore
           backdropFilter: 'blur(15px)',
+          WebkitBackdropFilter: 'blur(15px)',
           backgroundColor:
             type === 'dark'
               ? 'rgba(16, 12, 12, 0.64)'
